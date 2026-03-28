@@ -23,11 +23,11 @@ const Register = ({ setPage }) => {
         e.preventDefault()
 
         if (!formData.name) {
-            toast.error("Ad daxil et")
+            toast.error("enter your name")
         } else if (!formData.surname) {
-            toast.error("Soyad daxil et")
+            toast.error("enter your surname")
         } else if (!formData.age) {
-            toast.error("Yaş daxil et")
+            toast.error("enter your age")
         } else {
             setStep(2)
         }
@@ -37,17 +37,17 @@ const Register = ({ setPage }) => {
         e.preventDefault()
 
         if (!formData.email.includes("@")) {
-            toast.error("Email düzgün deyil")
+            toast.error("email is incorrect")
             return
         }
 
         if (formData.password.length < 6) {
-            toast.error("Şifrə minimum 6 simvol olmalıdır")
+            toast.error("at least 6 chars")
             return
         }
 
         localStorage.setItem("user", JSON.stringify(formData))
-        toast.success("Qeydiyyat uğurludur!")
+        toast.success("you're logged!")
 
         setPage("login")
     }
